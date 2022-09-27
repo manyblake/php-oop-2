@@ -7,9 +7,9 @@ class PetFood extends Product
   public $expirationDate;
   public $ingredients;
 
-  function __construct($name, $price, $description, $expirationDate, $ingredients)
+  function __construct($name, $price, $description, $volume, $expirationDate, $ingredients)
   {
-    parent::__construct($name, $price, $description);
+    parent::__construct($name, $price, $description, $volume);
     $this->expirationDate = $expirationDate;
     $this->ingredients = $ingredients;
   }
