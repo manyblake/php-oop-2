@@ -13,9 +13,4 @@ class PetFood extends Product
     $this->expirationDate = $expirationDate;
     $this->ingredients = $ingredients;
   }
-
-  public function setExpirationDate($expirationDate)
-  {
-    $this->expirationDate = $expirationDate;
-  }
 }
