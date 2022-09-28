@@ -14,7 +14,7 @@ class Cart
 
   function getTotal()
   {
-    return $this->total;
+    return $this->total + $this->shippingFees;
   }
 
   function calculateShippingFees($order)

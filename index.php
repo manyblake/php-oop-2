@@ -61,12 +61,16 @@ $category = 'Pettorine, guinzagli & co.';
 $pettorina = new PetAccessory($name, $price, $description, $volume, $size, $category);
 
 $data = [$cannetta, $cuscino, $pettorina, $crocchette];
+
+$data = $crocchette->addToCart($data, $crocchette);
 $order = new Cart($data);
 
 $order->calculateTotal($data);
 
 $order->calculateShippingFees($data);
 
-var_dump($order->getShippingFees());
+// var_dump($order->getShippingFees());
 
-var_dump($order->getTotal());
+var_dump($order->getTotal($order));
+
+// var_dump($data);
