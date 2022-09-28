@@ -62,7 +62,13 @@ $pettorina = new PetAccessory($name, $price, $description, $volume, $size, $cate
 
 $data = [$cannetta, $cuscino, $pettorina, $crocchette];
 
-$data = $crocchette->addToCart($data, $crocchette);
+
+try {
+  $data = $crocchette->addToCart($data, $crocchette);
+} catch (Exception $e) {
+  $data = $data;
+};
+
 $order = new Cart($data);
 
 $order->calculateTotal($data);

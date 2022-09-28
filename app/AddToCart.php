@@ -5,7 +5,11 @@ trait AddToCart
 
   public function addToCart($order, $element)
   {
-    $order[] = $element;
-    return $order;
+    if (gettype($element) == 'object') {
+      $order[] = $element;
+      return $order;
+    } else {
+      throw new Exception("L'elemento aggiunto al carrello non è valido");
+    }
   }
 }
